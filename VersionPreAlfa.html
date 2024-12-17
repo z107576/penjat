@@ -1,63 +1,119 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
 <html>
     <head>
         <title>Joc del penjat</title>
-    </head>
-    <body>
-        <h1> Prototip Joc del Penjat </h1>
-       
-        
-        <div
-            <label for="Letra">Escribe una letra de la a>z </label>
-            <input type="text" id="Letra" name="Letra"><br>
-            <input type="submit" value="Submit">
-        </div>
-        
-        <h2> Paraula </h2><!-- comment -->
-        
-        <p> -------- </p>
-        
-        <h2> Vides </h2>
-        
-        <p>    </p>  <p>    -  </p>
-        
-        <h2> Lletres </h2>
-        
-        <p> ------- </p>
-    </body>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
     <script>
         
         //definir variables
-        var Letras
-        var Palabra
-        var Vidas
+        var Letras = "";
+        var Palabra = "";
+        var Vidas = 7;     
+        
+        //Saber si has fallado o acertado
+        function falloEncierto() {
+            Letra = document.getElementById("letra").value;
+
+        //cambiar a minuscula    
+                Letra.toLowerCase();
+        //cambiar la letra especial a normal
+        switch (Letra) {
+            case "á":
+            case "à":
+                Letra = "a";
+                break;
+            case "é":
+            case "è":
+                Letra = "e";
+                break;
+            case "í":
+            case "ì":
+            case "ï":
+                Letra = "i";
+                break;
+            case "ò":
+            case "ó":
+                Letra = "o";
+                break;
+            case "ù":
+            case "ú":
+            case "ü":
+                Letra = "u";
+                break;
+            default:
+                 break;
+        }
+              
+        
+        if (((Letra >= "a") && (Letra <= "m")) || (Letra === "ç")) { 
+                window.alert("Has acertado");
+                concatenarLetrasCorrectas();
+        } else {
+            if (((Letra >= "n") && (Letra <= "z")) || (Letra === "ñ")) {
+                window.alert("Has fallado");
+                Vidas = Vidas - 1;
+                cambiarVidas();
+                concatenarLetrasIncorrectas();
+            }
+        else {  
+                window.alert("Vuelve a intentarlo");   
+                }
+            }
+        }
+ 
+        
+        //concatenar letras correctas
+        function concatenarLetrasCorrectas() {
+        Palabra = Palabra + Letra + " ";
+        document.getElementById("Palabra").innerHTML = Palabra;
+        }
+        
+        //concatenar letras incorrectas
+        function concatenarLetrasIncorrectas() {
+        Letras = Letras + Letra + " ";
+        document.getElementById("Letras").innerHTML = Letras;
+        }
         
         
-        //funcion para detener el juego
+         //cambiar vidas
+        function cambiarVidas() {
+        document.getElementById("Vidas").innerHTML = 
+                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vidas;
+        }    
+        //funcion para decir si ganas o pierdes
         
-        function detenerJuego() {  
-        detenerJuego = document.getElementById('detenerjuego').value;
-        if ((Letras >= 14))
-        window.alert("Has ganado"); 
-        } else if ((Vidas = 0))
+        function ganarPerder() {  
+        detenerJuego = document.getElementById('ganarperder').innerHTML;
+        if ((Vidas = 0)) {
             window.alert("Has perdido"); 
-
+            document.getElementById("letra").disabled = true;
+        }    else {
+            if (Palabra.length >= 14) 
+                window.alert("Has ganado");
+            document.getElementById("letra").disabled = true;
+        }
+    }
+    
+    </script>        
+    </head>
+    <body>
+        <h1> Prototip Joc del Penjat </h1>
+        <form>
+            <h2> Letra </h2>
+            <input type="text" id="letra" name="Letra" placeholder="escribe una letra en minuscula">
+            <button onclick="falloEncierto()">Comprovar</button>
+        </form> 
+        <h2> Paraula </h2><!-- comment -->
         
+        <p id="Palabra">&nbsp;&nbsp;&nbsp; -------- </p>
         
+        <h2> Vides </h2>
+      
+        <p id="Vidas">&nbsp;&nbsp;&nbsp;&nbsp;  __  </p>
         
+        <h2> Lletres </h2>
         
-        
-        
-        
-        
-        
-        
-    </script>
-
-
-
+        <p id="Letras">&nbsp;&nbsp;&nbsp; ------- </p>
+    </body>
 </html>
