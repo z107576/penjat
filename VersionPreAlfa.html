@@ -1,119 +1,110 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Joc del penjat</title>
+        <title>Juego del Ahorcado</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
     <script>
         
-        //definir variables
+        // Definir variables
         var Letras = "";
         var Palabra = "";
         var Vidas = 7;     
         
-        //Saber si has fallado o acertado
+        // Saber si has fallado o acertado
         function falloEncierto() {
-            Letra = document.getElementById("letra").value;
+            var Letra = document.getElementById("letra").value;
 
-        //cambiar a minuscula    
-                Letra.toLowerCase();
-        //cambiar la letra especial a normal
-        switch (Letra) {
-            case "á":
-            case "à":
-                Letra = "a";
-                break;
-            case "é":
-            case "è":
-                Letra = "e";
-                break;
-            case "í":
-            case "ì":
-            case "ï":
-                Letra = "i";
-                break;
-            case "ò":
-            case "ó":
-                Letra = "o";
-                break;
-            case "ù":
-            case "ú":
-            case "ü":
-                Letra = "u";
-                break;
-            default:
-                 break;
-        }
-              
-        
-        if (((Letra >= "a") && (Letra <= "m")) || (Letra === "ç")) { 
+            // Cambiar a minuscula    
+            Letra = Letra.toLowerCase();
+
+            // Cambiar la letra especial a normal
+            switch (Letra) {
+                case "á":
+                case "à":
+                    Letra = "a";
+                    break;
+                case "é":
+                case "è":
+                    Letra = "e";
+                    break;
+                case "í":
+                case "ì":
+                case "ï":
+                    Letra = "i";
+                    break;
+                case "ò":
+                case "ó":
+                    Letra = "o";
+                    break;
+                case "ù":
+                case "ú":
+                case "ü":
+                    Letra = "u";
+                    break;
+                default:
+                    break;
+            }
+
+            if (((Letra >= "a") && (Letra <= "m")) || (Letra === "ç")) { 
                 window.alert("Has acertado");
-                concatenarLetrasCorrectas();
-        } else {
-            if (((Letra >= "n") && (Letra <= "z")) || (Letra === "ñ")) {
+                concatenarLetrasCorrectas(Letra);
+            } else if (((Letra >= "n") && (Letra <= "z")) || (Letra === "ñ")) {
                 window.alert("Has fallado");
                 Vidas = Vidas - 1;
                 cambiarVidas();
-                concatenarLetrasIncorrectas();
-            }
-        else {  
+                concatenarLetrasIncorrectas(Letra);
+            } else {  
                 window.alert("Vuelve a intentarlo");   
-                }
+            }
+
+            ganarPerder();
+        }
+
+        // Concatenar letras correctas
+        function concatenarLetrasCorrectas(Letra) {
+            Palabra = Palabra + Letra + " ";
+            document.getElementById("Palabra").innerHTML = Palabra;
+        }
+        
+        // Concatenar letras incorrectas
+        function concatenarLetrasIncorrectas(Letra) {
+            Letras = Letras + Letra + " ";
+            document.getElementById("Letras").innerHTML = Letras;
+        }
+        
+        // Cambiar vidas
+        function cambiarVidas() {
+            document.getElementById("Vidas").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vidas;
+        }    
+        
+        // Comprobar si ganas o pierdes
+        function ganarPerder() {  
+            if (Vidas <= 0) {
+                window.alert("Has perdido"); 
+                document.getElementById("letra").disabled = true;
+                document.getElementById("botonComprobar").disabled = true;
+            } else if (Palabra.length >= 14) {
+                window.alert("Has ganado");
+                document.getElementById("letra").disabled = true;
+                document.getElementById("botonComprobar").disabled = true;
             }
         }
- 
         
-        //concatenar letras correctas
-        function concatenarLetrasCorrectas() {
-        Palabra = Palabra + Letra + " ";
-        document.getElementById("Palabra").innerHTML = Palabra;
-        }
-        
-        //concatenar letras incorrectas
-        function concatenarLetrasIncorrectas() {
-        Letras = Letras + Letra + " ";
-        document.getElementById("Letras").innerHTML = Letras;
-        }
-        
-        
-         //cambiar vidas
-        function cambiarVidas() {
-        document.getElementById("Vidas").innerHTML = 
-                "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + Vidas;
-        }    
-        //funcion para decir si ganas o pierdes
-        
-        function ganarPerder() {  
-        detenerJuego = document.getElementById('ganarperder').innerHTML;
-        if ((Vidas = 0)) {
-            window.alert("Has perdido"); 
-            document.getElementById("letra").disabled = true;
-        }    else {
-            if (Palabra.length >= 14) 
-                window.alert("Has ganado");
-            document.getElementById("letra").disabled = true;
-        }
-    }
-    
     </script>        
     </head>
     <body>
-        <h1> Prototip Joc del Penjat </h1>
+        <h1>Juego del Ahorcado</h1>
         <form>
-            <h2> Letra </h2>
-            <input type="text" id="letra" name="Letra" placeholder="escribe una letra en minuscula">
-            <button onclick="falloEncierto()">Comprovar</button>
+            <h2>Letra</h2>
+            <input type="text" id="letra" name="Letra" placeholder="Escribe una letra en minuscula">
+            <button type="button" id="botonComprobar" onclick="falloEncierto()">Comprobar</button>
         </form> 
-        <h2> Paraula </h2><!-- comment -->
-        
+        <h2>Palabra</h2>
         <p id="Palabra">&nbsp;&nbsp;&nbsp; -------- </p>
-        
-        <h2> Vides </h2>
-      
-        <p id="Vidas">&nbsp;&nbsp;&nbsp;&nbsp;  __  </p>
-        
-        <h2> Lletres </h2>
-        
+        <h2>Vidas</h2>
+        <p id="Vidas">&nbsp;&nbsp;&nbsp;&nbsp;  7  </p>
+        <h2>Letras incorrectas</h2>
         <p id="Letras">&nbsp;&nbsp;&nbsp; ------- </p>
     </body>
 </html>
