@@ -7,6 +7,12 @@
         var Palabra = "";
         var Vidas = 7;     
  	
+    		var seconds = 0;
+    		function timer()	{
+        		seconds = seconds + 1; 
+        document.getElementById("counter").innerHTML =	seconds;
+	}
+    setInterval(timer, 1000);
     
         // Saber si has fallado o acertado
         function falloEncierto() {
