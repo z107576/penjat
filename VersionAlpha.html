@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Juego del Ahorcado</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link rel="stylesheet" href="css/penjat.css">
+        <script src="js/penjat.js"></script>
+
     </head>
-    <body>
-        <div>TODO write content</div>
+    
+    
+    <body onload="CargarImagenes();" style="background-image: url('img/Desert.png');
+          background-size: 640px 480px; background-repeat: no-repeat;">
+        
+ 
+        <h1>Juego del Ahorcado</h1>
+        <form>
+            <h2>Letra</h2>      <h1 id=traduccion> Traduccion </h1> <img src="img/ca.png" id="catalantraduccion" style="width:20px;height:30px;"
+            title="Haz click para traducir al catalan!">
+            <input type="text" id="letra" name="Letra" placeholder="Escribe una letra en minuscula" maxlength="1">
+            <button type="button" id="botonComprobar" onclick="falloEncierto()">Comprobar</button>
+        </form> 
+        <h2>Palabra</h2>
+        <p id="Palabra">&nbsp;&nbsp;&nbsp; -------- </p>
+        <h2>Vidas</h2>
+        <p id="Vidas">&nbsp;&nbsp;&nbsp;&nbsp;  7  </p>
+        <h2>Letras incorrectas</h2>
+        <p id="Letras">&nbsp;&nbsp;&nbsp; ------- </p>
+        
+        <div id="gato">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;"
+            title="Miau!">
+            <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;"
+            title="Miauuuu!">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;"
+            title="Miau!">
+            <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;"
+            title="Miau!">
+        </div>
+         
+        <div id='imagenes'>
+            
+            <img src="img/ahorcado_6.png" id="ahorcado_6" style ="width:280px;height:270px;"
+                 title="Te quedan 6 vidas!">
+            <img src="img/ahorcado_5.png" id="ahorcado_5" style ="width:280px;height:270px;"
+                 title="Te quedan 5 vidas!">
+            <img src="img/ahorcado_4.png" id="ahorcado_4" style ="width:280px;height:270px;"
+                 title="Te quedan 4 vidas!">
+            <img src="img/ahorcado_3.png" id="ahorcado_3" style ="width:280px;height:270px;"
+                 title="Te quedan 3 vidas!">
+            <img src="img/ahorcado_2.png" id="ahorcado_2" style ="width:280px;height:270px;"
+                 title="Te quedan 2 vidas!">
+            <img src="img/ahorcado_1.png" id="ahorcado_1" style ="width:280px;height:270px;"
+                 title="Te queda 1 vida!">
+            <img src="img/ahorcado_0.png" id="ahorcado_0" style ="width:280px;height:270px;"
+                 title="Te quedaste sin vidas!">
+            <a href="img/>ahorcado.jpg">
+                <img src="img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"></a>  
+        </div>
+    
+       
+        <div id='audios'>  
+        
+            <audio id="mystery">    <source src="aud/mystery.mp3"       type="audio/mpeg"></audio>
+            <audio id="miau">        <source src="aud/miau.mp3"          type="audio/mpeg"></audio>
+            <audio id="clock">       <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+            <audio id="cheer">       <source src="aud/cheer.mp3"         type="audio/mpeg"></audio>
+            <audio id="catfight">    <source src="aud/cat-fight.mp3"     type="audio/mpeg"></audio>
+            <audio id="boom">        <source src="aud/boom_cloud.mp3"    type="audio/mpeg"></audio>
+            <audio id="belltoll">    <source src="aud/bell_toll.mp3"     type="audio/mpeg"></audio>
+            <audio id="belltollx3"> <source src="aud/bell_toll_x3.mp3"  type="audio/mpeg"></audio>
+        
+        </div>
+    
     </body>
+        
+        
 </html>
