@@ -1,0 +1,24 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 14 de gen. 2025, 9:24:22
+    Author     : aula1PTD1
+*/
+html {
+background:#a7a6a6;
+margin:0;
+width:640px;
+height:480px;
+}
+
+#imagenes {position:relative; top:-380px; left:320px;}
+
+#gato {position:relative; top:-130px; left:300px;}
+
+#traduccion {position:relative; top:-380px; left:300px;}
+
+#catalantraduccion {position:relative; top:-432px; left:500px;}
+
+#rotar {position:relative; top:-258px; left:100px;}
