@@ -106,6 +106,11 @@
                 window.alert("Has perdido"); 
                 document.getElementById("letra").disabled = true;
                 document.getElementById("botonComprobar").disabled = true;
+                document.body.style.backgroundImage = "url('img/Jungle.png')";
+                document.getElementById("caminar").hidden = false;
+                document.getElementById("disfraz1").hidden = true;
+                document.getElementById("disfraz2").hidden = true;
+                document.getElementById("disfraz3").hidden = true;
             } else if (Palabra.length >= 14) {
                 window.alert("Has ganado");
                 document.getElementById("letra").disabled = true;
@@ -116,6 +121,7 @@
                 document.getElementById("rotar").hidden = false;
                 document.body.style.backgroundImage = "url('img/Party.png')";
                 document.getElementById("ahorcado").hidden = false;
+                escondeImg();
                 
             }
             
@@ -175,9 +181,24 @@
         document.getElementById("rotar").hidden = true;
         document.getElementById("disfraz1").hidden = true;
         document.getElementById("disfraz2").hidden = true;
+        document.getElementById("caminar").hidden = true;
         
         
     }
+    
+    function escondeImg() {
+    
+        document.getElementById("ahorcado_6").hidden = true;
+        document.getElementById("ahorcado_5").hidden = true;
+        document.getElementById("ahorcado_4").hidden = true;
+        document.getElementById("ahorcado_3").hidden = true;
+        document.getElementById("ahorcado_2").hidden = true;
+        document.getElementById("ahorcado_1").hidden = true;
+        document.getElementById("ahorcado_0").hidden = true;
+        
+        
+    }
+    
     
 
     

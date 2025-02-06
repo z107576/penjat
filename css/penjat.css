@@ -3,7 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
 */
 /* 
-    Created on : 14 de gen. 2025, 9:24:22
+        Created on : 14 de gen. 2025, 9:24:22
     Author     : aula1PTD1
 */
 html {
@@ -13,14 +13,20 @@ width:640px;
 height:480px;
 }
 
-#imagenes {position:relative; top:-380px; left:320px;}
+#imagenes {position:relative; top:-500px; left:320px;}
 
-#gato {position:relative; top:-130px; left:300px;}
+#gato {position:relative; top:-260px; left:300px;}
 
 #traduccion {position:relative; top:-380px; left:300px;}
 
 #ca {position:relative; top:-432px; left:500px;}
 
-#es {position:relative; top:-432px; left:510px;}
+#es {position:relative; top:-432px; left:500px;}
 
-#rotar {position:relative; top:-258px; left:100px;}
+#gb {position:relative; top:-432px; left:500px;}
+
+#caminar {position:relative; top:-188px; left:40px;}
+
+#ahorcado {position:relative; top:-428px; left:290px;}
+
+#rotar {position:relative; top:-158px; left:40px;}
