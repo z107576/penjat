@@ -6,7 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <link rel="stylesheet" href="css/penjat.css">
         <script src="js/penjat.js"></script>
+        <script>   
 
+            // Esto es para darle al enter
+            window.onkeypress = function(evObject) {
+                if (evObject.keyCode === 13) { FalloEncierto(); }
+                
+                
+            }
+            
+            
+            
+        </script>
+        
     </head>
     
     
@@ -19,7 +31,7 @@
             <h2>Letra</h2>      
             <input type="text" id="letra" name="Letra" placeholder="Escribe una letra en minuscula" maxlength="1">
             <button type="button" id="botonComprobar" onclick="falloEncierto()">Comprobar</button>
-        
+            
         </form> 
         <h2>Palabra</h2>
         <p id="Palabra">&nbsp;&nbsp;&nbsp; -------- </p>
