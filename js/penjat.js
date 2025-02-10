@@ -136,6 +136,12 @@
         }
         
         
+        function misterio() {
+            
+            document.getElementById("mystery").play();
+        }
+        
+        
         //Cambiar Imagenes con switch
        function MuestraImg() {
            switch (Vidas) {
