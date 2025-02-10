@@ -57,6 +57,7 @@
                 document.getElementById("disfraz3").hidden = true;
                 document.getElementById("disfraz1").hidden = true;
                 document.getElementById("disfraz2").hidden = false;
+                document.getElementById("clock").play();
                 
             } else if (((Letra >= "n") && (Letra <= "z")) || (Letra === "ñ")) {
                 window.alert("Has fallado");
@@ -64,15 +65,18 @@
                 cambiarVidas();
                 concatenarLetrasIncorrectas(Letra);
                 MuestraImg();
+                document.getElementById("boom").play();
                 document.getElementById("clock").play();
                 document.getElementById("disfraz3").hidden = true;
                 document.getElementById("disfraz2").hidden = true;
                 document.getElementById("disfraz1").hidden = false;
+                
             } else {  
                 window.alert("Vuelve a intentarlo");
                 document.getElementById("disfraz1").hidden = true;
                 document.getElementById("disfraz2").hidden = true;
                 document.getElementById("disfraz3").hidden = false;
+                document.getElementById("clock").play();
             }
 
             ganarPerder();
@@ -111,6 +115,7 @@
                 document.getElementById("disfraz2").hidden = true;
                 document.getElementById("disfraz3").hidden = true;
                 document.getElementById("catfight").play();
+                bell();
                 
             } else if (Palabra.length >= 14) {
                 window.alert("Has ganado");
@@ -124,6 +129,7 @@
                 document.getElementById("cheer").play();
                 document.getElementById("ahorcado").hidden = false;
                 escondeImg();
+               
                 
             }
             
@@ -201,6 +207,13 @@
         
     }
     
+    
+    function bell() {
+        
+        window.alert("En Paz Descanse R.I.P");
+        document.getElementById("belltollx3").play();
+        
+    }
     
 
     
