@@ -8,9 +8,14 @@
         var Vidas = 7;     
  	
         
+        //Arrays y conjunto de arrays
+        var Palabras = ["cordes", "fetge", "forca", "jutges", "jutjat",
+            "mengen", "penjat", "quinta", "setze"]; 
+        var Pistas = ["A la quinta forca", "A ca un penjat, no hi anomenis cordes",
+            "Setze jutges d'un jutjat mengen fetge d'un penjat"];
+        var palabraspistas = [1, 2, 0, 2, 2, 2, 1, 0, 2];
         
-        
-        
+      
     		var seconds = 0;
     		function timer()	{
         		seconds = seconds + 1; 
@@ -104,6 +109,8 @@
         }    
           
 
+       
+       
         // Comprobar si ganas o pierdes
         function ganarPerder() {  
             
@@ -182,7 +189,7 @@
  //funcion para esconder las imagenes cuando se inicia
     function CargarImagenes() {
         
-        if (!confirm('Anam a la quinta forca?')) {
+        if (!confirm("Let's go: a la quinta forca / al quinto pino / to the boondocks?")) {
             document.body.style.backgroundImage = "url('img/fondo1.png')";
         }   
        
@@ -221,8 +228,16 @@
         window.alert("En Paz Descanse R.I.P");
         document.getElementById("belltollx3").play();
         
+        
     }
+        
+ 
     
+     var aleatorio = Math.floor(Math.random() * Palabras.length);
+     var palabra = (Palabras(aleatorio));
+     var pista = (Pistas(aleatorio));
+
+
 
     
 
