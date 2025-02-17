@@ -234,8 +234,8 @@
  
     
      var aleatorio = Math.floor(Math.random() * Palabras.length);
-     var palabra = (Palabras(aleatorio));
-     var pista = (Pistas(aleatorio));
+     var palabra = Palabras[aleatorio];
+     var pista = Pistas[palabraspistas[aleatorio]];
 
 
 

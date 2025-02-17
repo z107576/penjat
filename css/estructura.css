@@ -13,19 +13,19 @@ width:640px;
 height:480px;
 }
 
-#imagenes {position:relative; top:-500px; left:320px;}
+#imagenes {position:relative; top:-570px; left:320px;}
 
-#gato {position:relative; top:-260px; left:300px;}
+#gato {position:relative; top:-320px; left:300px;}
 
-#traduccion {position:relative; top:-380px; left:300px;}
+#traduccion {position:relative; top:-483px; left:300px;}
 
-#ca {position:relative; top:-432px; left:500px;}
+#ca {position:relative; top:-532px; left:500px;}
 
-#es {position:relative; top:-432px; left:500px;}
+#es {position:relative; top:-532px; left:500px;}
 
-#gb {position:relative; top:-432px; left:500px;}
+#gb {position:relative; top:-532px; left:500px;}
 
-#fr {position:relative; top:-432px; left:500px;}
+#fr {position:relative; top:-532px; left:500px;}
 
 #caminar {position:relative; top:-188px; left:40px;}
 
@@ -33,4 +33,20 @@ height:480px;
 
 #rotar {position:relative; top:-100px; left:200px;}
 
-#Gatotienesiete {position:relative; top:-47px; left:76px;}
+#Gatotienesiete {position:relative; top:-45px; left:76px;}
+
+#demanessopes {position:relative; top:-45px; left:100px;}
+
+#etslletres {position:relative; top:-63px; left:80px;}
+
+#Vidas {position:relative; top:-50px; left:-20px;}
+
+#LETRASINCORRECTAS {position:relative; top:-20px; left:0px;}
+
+#Letras {position:relative; top:-50px; left:0px;}
+
+#counter {position:relative; top:-226px; left:120px;}
+
+#BotonPista {position:relative; top:-400px; left:120px;}
+
+#Palabra {position:relative; top:-30px; left:10px;}
