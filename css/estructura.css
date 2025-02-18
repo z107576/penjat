@@ -6,26 +6,51 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
         Created on : 14 de gen. 2025, 9:24:22
     Author     : aula1PTD1
 */
-html {
-background:#a7a6a6;
-margin:0;
-width:640px;
-height:480px;
-}
+ html {
+        background:#222;
+        margin:0;
+        width:640px;
+        height:480px;
+    }
 
-#imagenes {position:relative; top:-570px; left:320px;}
+    body {
+        background:linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+        border:1px solid black;
+        padding:10px 20px;
+        box-shadow:5px 0px 30px #000;
+        border-radius:8px;
+        margin:0;
+        width:640px;
+        height:480px;
+    }
 
-#gato {position:relative; top:-320px; left:300px;}
+    h1, a {
+        background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+        border: 1px solid black;
+        padding: 1px 1px;
+        box-shadow: 5px 0px 30x #000;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 600px;
+    }
+
+    h2 {
+        color: white;
+    }
+
+#imagenes {position:relative; top:-570px; left:40px;}
+
+#gato {position:relative; top:-320px; left:0px;}
 
 #traduccion {position:relative; top:-483px; left:300px;}
 
-#ca {position:relative; top:-532px; left:500px;}
+#ca {position:relative; top:-512px; left:480px;}
 
-#es {position:relative; top:-532px; left:500px;}
+#es {position:relative; top:-512px; left:480px;}
 
-#gb {position:relative; top:-532px; left:500px;}
+#gb {position:relative; top:-512px; left:480px;}
 
-#fr {position:relative; top:-532px; left:500px;}
+#fr {position:relative; top:-512px; left:480px;}
 
 #caminar {position:relative; top:-188px; left:40px;}
 
@@ -39,14 +64,14 @@ height:480px;
 
 #etslletres {position:relative; top:-63px; left:80px;}
 
-#Vidas {position:relative; top:-50px; left:-20px;}
+#Vidas {position:relative; top:-47px; left:-20px;}
 
 #LETRASINCORRECTAS {position:relative; top:-20px; left:0px;}
 
 #Letras {position:relative; top:-50px; left:0px;}
 
-#counter {position:relative; top:-226px; left:120px;}
+#counter {position:relative; top:-215px; left:120px;}
 
-#BotonPista {position:relative; top:-400px; left:120px;}
+#BotonPista {position:relative; top:-370px; left:120px;}
 
 #Palabra {position:relative; top:-30px; left:10px;}

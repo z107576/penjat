@@ -3,8 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
  */
  // Definir variables
-        var Letras = "";
-        var Palabra = "";
+        var Letras = ["_","_","_","_","_","_","_"];
+        var Palabra = [];
         var Vidas = 7;     
  	
         
@@ -15,13 +15,26 @@
             "Setze jutges d'un jutjat mengen fetge d'un penjat"];
         var palabraspistas = [1, 2, 0, 2, 2, 2, 1, 0, 2];
         
-      
+      document.getElementById("Palabra").innerHTML = Palabra;
     		var seconds = 0;
     		function timer()	{
         		seconds = seconds + 1; 
         document.getElementById("counter").innerHTML =	seconds;
 	}
     setInterval(timer, 1000);
+    
+    
+    var aleatorio = Math.floor(Math.random() * Palabras.length);
+    var Palabra = Palabras[aleatorio];
+    var pista = Pistas[palabraspistas[aleatorio]];
+
+    for (i = 0; i < Palabra.length; i++) {
+         Palabra[i] + "_";
+    }   
+    
+    
+    
+    
         // Saber si has fallado o acertado
         function falloEncierto() {
             
@@ -219,7 +232,11 @@
         document.getElementById("ahorcado_1").hidden = true;
         document.getElementById("ahorcado_0").hidden = true;
         
+        document.getElementById("disfraz1").hidden = true;
+        document.getElementById("disfraz2").hidden = true;
+        document.getElementById("disfraz3").hidden = true;
         
+        document.body.style.display = "block";
     }
     
     
@@ -233,11 +250,6 @@
         
  
     
-     var aleatorio = Math.floor(Math.random() * Palabras.length);
-     var palabra = Palabras[aleatorio];
-     var pista = Pistas[palabraspistas[aleatorio]];
-
-
 
     
 
