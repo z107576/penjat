@@ -25,7 +25,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
     
     
     <body onload="escondeImg(); CargarImagenes(); misterio(); " style="background-image: url('img/Desert.png');
-          background-size: 640px 480px; background-repeat: no-repeat;">
+          background-size: 640px 480px; background-repeat: no-repeat; display: none;">
         
  
         <h1 id="titulo">Juego del Ahorcado</h1>
@@ -42,7 +42,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this
         <h2 id="LETRASINCORRECTAS">Letras:</h2>  <h3 id="etslletres"><a href="https://pccd.dites.cat/p/De_lletres"> Eres de letras? </a></h3>
         <p id="Letras">&nbsp;&nbsp;&nbsp; ------- </p>
         <h3 id = "counter" >0</h3>
-        <button type="button" id="BotonPista" onclick="">Pista</button>
+        <button type="button" id="BotonPista" onclick="randomizadorpista()">Pista</button>
         
         <h3 id=traduccion></h3> 
         <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionalpha?_x_tr_sl=auto&_x_tr_tl=ca&_x_tr_hl=ca&_x_tr_pto=wapp" id="ca"> <img src="img/ca.png" alt="tra_ca" title="En Catalan"><a/>

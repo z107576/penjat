@@ -4,6 +4,11 @@
  */
  // Definir variables
         var Letras = ["_","_","_","_","_","_","_"];
+            /*if (Letras.indexOf(Letra) != -1) {
+                 window.alert("Letra Repetida")  
+            }
+             */
+        
         var Palabra = [];
         var Vidas = 7;     
  	
@@ -218,12 +223,14 @@
         document.getElementById("disfraz1").hidden = true;
         document.getElementById("disfraz2").hidden = true;
         document.getElementById("caminar").hidden = true;
+        document.getElementById("Palabra").value = Palabra;
         
         
     }
     
     function escondeImg() {
     
+        
         document.getElementById("ahorcado_6").hidden = true;
         document.getElementById("ahorcado_5").hidden = true;
         document.getElementById("ahorcado_4").hidden = true;
@@ -248,8 +255,13 @@
         
     }
         
- 
-    
+ /*
+   function randomizadorpista() {
+      
+       window.alert(pista)
+       window.alert(Palabras)
 
+   }
+*/
     
 
