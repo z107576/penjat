@@ -4,10 +4,11 @@
  */
  // Definir variables
         var Letras = ["_","_","_","_","_","_","_"];
-            /*if (Letras.indexOf(Letra) != -1) {
+         /*   
+        if (Letras.indexOf(Letra) != -1) {
                  window.alert("Letra Repetida")  
             }
-             */
+           */  
         
         var Palabra = [];
         var Vidas = 7;     
@@ -20,7 +21,6 @@
             "Setze jutges d'un jutjat mengen fetge d'un penjat"];
         var palabraspistas = [1, 2, 0, 2, 2, 2, 1, 0, 2];
         
-      document.getElementById("Palabra").innerHTML = Palabra;
     		var seconds = 0;
     		function timer()	{
         		seconds = seconds + 1; 
@@ -30,14 +30,15 @@
     
     
     var aleatorio = Math.floor(Math.random() * Palabras.length);
-    var Palabra = Palabras[aleatorio];
+    var palabra = Palabras[aleatorio];
     var pista = Pistas[palabraspistas[aleatorio]];
 
-    for (i = 0; i < Palabra.length; i++) {
-         Palabra[i] + "_";
+    for (i = 0; i < palabra.length; i++) {
+         Palabra[i] = "_";
     }   
     
     
+
     
     
         // Saber si has fallado o acertado
@@ -76,8 +77,15 @@
                 default:
                     break;
             }
-
-            if (((Letra >= "a") && (Letra <= "m")) || (Letra === "ç")) {
+            alert(palabra);
+            if ((Letra < "a") || (Letra > "z")) {  
+                window.alert("Vuelve a intentarlo");
+                document.getElementById("disfraz1").hidden = true;
+                document.getElementById("disfraz2").hidden = true;
+                document.getElementById("disfraz3").hidden = false;
+                document.getElementById("clock").play();
+            }
+            else if (palabra.includes(Letra)) {
                 window.alert("Has acertado");
                 concatenarLetrasCorrectas(Letra);
                 document.getElementById("miau").play();
@@ -86,7 +94,7 @@
                 document.getElementById("disfraz2").hidden = false;
                 document.getElementById("clock").play();
                 
-            } else if (((Letra >= "n") && (Letra <= "z")) || (Letra === "ñ")) {
+            } else {
                 window.alert("Has fallado");
                 Vidas = Vidas - 1;
                 cambiarVidas();
@@ -96,14 +104,7 @@
                 document.getElementById("clock").play();
                 document.getElementById("disfraz3").hidden = true;
                 document.getElementById("disfraz2").hidden = true;
-                document.getElementById("disfraz1").hidden = false;
-                
-            } else {  
-                window.alert("Vuelve a intentarlo");
-                document.getElementById("disfraz1").hidden = true;
-                document.getElementById("disfraz2").hidden = true;
-                document.getElementById("disfraz3").hidden = false;
-                document.getElementById("clock").play();
+                document.getElementById("disfraz1").hidden = false;                
             }
 
             ganarPerder();
@@ -111,13 +112,17 @@
 
         // Concatenar letras correctas
         function concatenarLetrasCorrectas(Letra) {
-            Palabra = Palabra + Letra + " ";
+            // Palabra = Palabra + Letra + " ";
+            var pos = palabra.indexOf(Letra);
+            Palabra[pos] = Letra;
             document.getElementById("Palabra").innerHTML = Palabra;
         }
         
         // Concatenar letras incorrectas
         function concatenarLetrasIncorrectas(Letra) {
-            Letras = Letras + Letra + " ";
+            //Letras = Letras + Letra + " ";
+            var pos = Letras.indexOf(Letra);
+            Letras[pos] = Letra;
             document.getElementById("Letras").innerHTML = Letras;
         }
         
@@ -255,13 +260,12 @@
         
     }
         
- /*
+
    function randomizadorpista() {
       
        window.alert(pista)
-       window.alert(Palabras)
 
    }
-*/
+
     
 
