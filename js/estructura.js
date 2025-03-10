@@ -4,12 +4,6 @@
  */
  // Definir variables
         var Letras = ["_","_","_","_","_","_","_"];
-         /*   
-        if (Letras.indexOf(Letra) != -1) {
-                 window.alert("Letra Repetida")  
-            }
-           */  
-        
         var Palabra = [];
         var Vidas = 7;     
  	
@@ -113,18 +107,30 @@
         // Concatenar letras correctas
         function concatenarLetrasCorrectas(Letra) {
             // Palabra = Palabra + Letra + " ";
+            
             var pos = palabra.indexOf(Letra);
             Palabra[pos] = Letra;
             document.getElementById("Palabra").innerHTML = Palabra;
+        
         }
         
         // Concatenar letras incorrectas
         function concatenarLetrasIncorrectas(Letra) {
             //Letras = Letras + Letra + " ";
+        /*    if (Letras.indexOf(Letra) != -1) {
+                 window.alert("Letra Repetida")  
+        }
+        */
             var pos = Letras.indexOf(Letra);
             Letras[pos] = Letra;
+            Letras[7 - Vidas] = Letra;
+            
             document.getElementById("Letras").innerHTML = Letras;
-        }
+            
+    }   
+            
+        
+        
         
         // Cambiar vidas
         function cambiarVidas() {
