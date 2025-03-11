@@ -90,9 +90,9 @@
                 
             } else {
                 window.alert("Has fallado");
+                concatenarLetrasIncorrectas(Letra);
                 Vidas = Vidas - 1;
                 cambiarVidas();
-                concatenarLetrasIncorrectas(Letra);
                 MuestraImg();
                 document.getElementById("boom").play();
                 document.getElementById("clock").play();
@@ -110,17 +110,21 @@
             
             var pos = palabra.indexOf(Letra);
             Palabra[pos] = Letra;
+
+       
             document.getElementById("Palabra").innerHTML = Palabra;
-        
         }
+        
         
         // Concatenar letras incorrectas
         function concatenarLetrasIncorrectas(Letra) {
             //Letras = Letras + Letra + " ";
-        /*    if (Letras.indexOf(Letra) != -1) {
-                 window.alert("Letra Repetida")  
-        }
-        */
+           if (Letras.indexOf(Letra) != -1) {
+                 window.alert("Letra Repetida");
+                 (Vidas = Vidas + 1);
+                 
+            }
+       
             var pos = Letras.indexOf(Letra);
             Letras[pos] = Letra;
             Letras[7 - Vidas] = Letra;
@@ -155,7 +159,7 @@
                 document.getElementById("catfight").play();
                 bell();
                 
-            } else if (Palabra.length >= 14) {
+            } else if (Palabra.indexOf("_")=== -1) {
                 window.alert("Has ganado");
                 document.getElementById("letra").disabled = true;
                 document.getElementById("botonComprobar").disabled = true;

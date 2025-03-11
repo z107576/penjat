@@ -52,7 +52,7 @@ input.addEventListener("keypress", function(falloEncierto) {
         <p id="Letras">&nbsp;&nbsp;&nbsp; _,_,_,_,_,_,_ </p>
         <h3 id = "counter" >0</h3>
         <button type="button" id="BotonPista" onclick="randomizadorpista()">Pista</button>
-        
+        <button type="button" id="Tecladoboton" onclick="document.getElementById('Teclado').hidden = !document.getElementById('Teclado').hidden;"><img src="img/keyboard.png" title="Muestra o esconde" alt="Teclado"></button>
         <h3 id=traduccion></h3> 
         <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionalpha?_x_tr_sl=auto&_x_tr_tl=ca&_x_tr_hl=ca&_x_tr_pto=wapp" id="ca"> <img src="img/ca.png" alt="tra_ca" title="En Catalan"><a/>
                                                
@@ -62,7 +62,74 @@ input.addEventListener("keypress", function(falloEncierto) {
                                                
         <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionalpha?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=ca&_x_tr_pto=wapp" id="fr"> <img src="img/fr.png" alt="tra_fr" title="En Frances"><a/>
         
-        
+        <div id="Teclado" translate="no">
+            <table><strong>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="q" onclick="document.getElementById('letra').value = 'q';">q</button>
+                    <button id="w" onclick="document.getElementById('letra').value = 'w';">w</button>
+                    <button id="e" onclick="document.getElementById('letra').value = 'e';">e</button>
+                    <button id="r" onclick="document.getElementById('letra').value = 'r';">r</button>
+                    <button id="t" onclick="document.getElementById('letra').value = 't';">t</button>
+                    <button id="y" onclick="document.getElementById('letra').value = 'y';">y</button>
+                    <button id="u" onclick="document.getElementById('letra').value = 'u';">u</button>
+                    <button id="i" onclick="document.getElementById('letra').value = 'i';">i</button>
+                    <button id="o" onclick="document.getElementById('letra').value = 'o';">o</button>
+                    <button id="p" onclick="document.getElementById('letra').value = 'p';">p</button>
+                    <!--
+                    <button id="agut" onclick="alert('Sense vocals accentuades!');" 
+                            style="color:red" title="Accent Agut">´</button>
+                    -->
+                    <button id="retro" onclick="Retroces();;" title="BACKSPACE">←</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;
+                    <button id="a" onclick="document.getElementById('letra').value = 'a';">a</button>
+                    <button id="s" onclick="document.getElementById('letra').value = 's';">s</button>
+                    <button id="d" onclick="document.getElementById('letra').value = 'd';">d</button>
+                    <button id="f" onclick="document.getElementById('letra').value = 'f';">f</button>
+                    <button id="g" onclick="document.getElementById('letra').value = 'g';">g</button>
+                    <button id="h" onclick="document.getElementById('letra').value = 'h';">h</button>
+                    <button id="j" onclick="document.getElementById('letra').value = 'j';">j</button>
+                    <button id="k" onclick="document.getElementById('letra').value = 'k';">k</button>
+                    <button id="l" onclick="document.getElementById('letra').value = 'l';">l</button>
+                    <button id="ñ" onclick="document.getElementById('letra').value = 'ñ';" 
+                            style="color:blue">ñ</button>
+                    <!--
+                    <button id="dieresi" onclick="alert('Sense vocals amb dièrsi!');" 
+                            style="color:red" title="Dièresi">¨</button>
+                    -->
+                    <button id="intro" onclick="falloEncierto();" title="ENTER">┘</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    <button id="shift" onclick="alert('Només lletres minúscules!');" 
+                            style="color:red" title="SHIFT">↑</button>
+                    <button id="z" onclick="document.getElementById('letra').value = 'z';">z</button>
+                    <button id="x" onclick="document.getElementById('letra').value = 'x';">x</button>
+                    <button id="c" onclick="document.getElementById('letra').value = 'c';">c</button>
+                    <button id="v" onclick="document.getElementById('letra').value = 'v';">v</button>
+                    <button id="b" onclick="document.getElementById('letra').value = 'b';">b</button>
+                    <button id="n" onclick="document.getElementById('letra').value = 'n';">n</button>
+                    <button id="m" onclick="document.getElementById('letra').value = 'm';">m</button>
+                    <button id="ç" onclick="document.getElementById('letra').value = 'ç';" 
+                            style="color:blue">ç</button>
+                    <button id="volat" onclick="document.getElementById('letra').value = '·';" 
+                            style="color:blue" title="Punt Volat">·</button>
+                    <button id="guio" onclick="document.getElementById('letra').value = '-';" 
+                            style="color:blue" title="Guionet">-</button>
+                    <!--
+                    <button id="greu" onclick="alert('Sense vocals accentuades!');" 
+                            style="color:red" title="Accent Greu">`</button>
+                    -->
+                  </td>          
+                </tr>
+            </strong></table>
+        </div>
             
         <div id="gato">
             <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;"
