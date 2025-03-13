@@ -53,6 +53,9 @@ input.addEventListener("keypress", function(falloEncierto) {
         <h3 id = "counter" >0</h3>
         <button type="button" id="BotonPista" onclick="randomizadorpista()">Pista</button>
         <button type="button" id="Tecladoboton" onclick="document.getElementById('Teclado').hidden = !document.getElementById('Teclado').hidden;"><img src="img/keyboard.png" title="Muestra o esconde" alt="Teclado"></button>
+        <button id="sonidos" title="On / Off"
+                onclick="document.getElementById('off').hidden = document.getElementById('on').hidden;
+                    document.getElementById('on').hidden = !document.getElementById('off').hidden;"> <img src="img/on.png" style="width:26px;height:20px" id="on"> <img src="img/off.png" style="width:26px;height:20px" id="off" hidden></button>
         <h3 id=traduccion></h3> 
         <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionalpha?_x_tr_sl=auto&_x_tr_tl=ca&_x_tr_hl=ca&_x_tr_pto=wapp" id="ca"> <img src="img/ca.png" alt="tra_ca" title="En Catalan"><a/>
                                                

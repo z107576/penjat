@@ -32,7 +32,10 @@
     }   
     
     
-
+    if (!document.getElementById('off').hidden) {
+        
+        document.getElementById('audios').disabled = true
+    }
     
     
         // Saber si has fallado o acertado
@@ -131,7 +134,7 @@
             
             document.getElementById("Letras").innerHTML = Letras;
             
-    }   
+    }    
             
         
         
@@ -153,6 +156,7 @@
                 document.getElementById("botonComprobar").disabled = true;
                 document.body.style.backgroundImage = "url('img/Jungle.png')";
                 document.getElementById("rotar").hidden = false;
+                document.getElementById("Teclado").hidden = true;
                 document.getElementById("disfraz1").hidden = true;
                 document.getElementById("disfraz2").hidden = true;
                 document.getElementById("disfraz3").hidden = true;
@@ -169,6 +173,7 @@
                 document.getElementById("caminar").hidden = false;
                 document.body.style.backgroundImage = "url('img/Party.png')";
                 document.getElementById("cheer").play();
+                document.getElementById("Teclado").hidden = true;
                 document.getElementById("ahorcado").hidden = false;
                 escondeImg();
                
@@ -225,7 +230,7 @@
         if (!confirm("Let's go: a la quinta forca / al quinto pino / to the boondocks?")) {
             document.body.style.backgroundImage = "url('img/fondo1.png')";
         }   
-       
+       document.getElementById("Teclado").hidden = true;
         document.getElementById("ahorcado_6").hidden = true;
         document.getElementById("ahorcado_5").hidden = true;
         document.getElementById("ahorcado_4").hidden = true;
