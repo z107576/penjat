@@ -1,0 +1,92 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+        Created on : 14 de gen. 2025, 9:24:22
+    Author     : aula1PTD1
+*/
+ html {
+        background:#222;
+        margin:0;
+        width:640px;
+        height:480px;
+    }
+
+    body {
+        background:linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+        border:1px solid black;
+        padding:10px 20px;
+        box-shadow:5px 0px 30px #000;
+        border-radius:8px;
+        margin:0;
+        width:640px;
+        height:480px;
+    }
+
+    h1, a {
+        background: linear-gradient(#aaa 0, #ddd 10px, #fff 55px);
+        border: 1px solid black;
+        padding: 1px 1px;
+        box-shadow: 5px 0px 30x #000;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 600px;
+    }
+
+    h2 {
+        color: white;
+    }
+
+#imagenes {position:relative; top:-570px; left:40px;}
+
+#gato {position:relative; top:-320px; left:0px;}
+
+#traducciones {position:relative; top:-150px; left:-30px;}
+
+#Teclado {position:relative; top:-650px; left:300px;}
+
+#Tecladoboton {position:relative; top:-600px; left:500px;}
+
+#ca {position:relative; top:-512px; left:480px;}
+
+#es {position:relative; top:-512px; left:480px;}
+
+#gb {position:relative; top:-512px; left:480px;}
+
+#fr {position:relative; top:-512px; left:480px;}
+
+#caminar {position:relative; top:-188px; left:40px;}
+
+#ahorcado {position:relative; top:-528px; left:40px;}
+
+#rotar {position:relative; top:-100px; left:200px;}
+
+#Gatotienesiete {position:relative; top:-85px; left:76px;}
+#vidas1 {position:relative; top:-40px; left:5px;}
+
+#demanessopes {position:relative; top:-45px; left:100px;}
+
+#etslletres {position:relative; top:-145px; left:80px;}
+
+#Vidas {position:relative; top:-90px; left:10px;}
+
+#LETRASINCORRECTAS {position:relative; top:-100px; left:0px;}
+
+#Letras {position:relative; top:-140px; left:0px;}
+
+#counter {position:relative; top:-256px; left:120px;}
+
+#BotonPista {position:relative; top:-550px; left:170px;}
+
+#Palabra {position:relative; top:-30px; left:10px;}
+
+#sonidos {position:relative; top:-600px; left:380px;}
+
+#urlpistas {position:relative; top:-190px; left:-18px;}
+
+#urlpista1 {position:relative; top:-235px; left:120px;}
+
+#urlpista2 {position:relative; top:-276px; left:180px;}
+
+#urlpista3 {position:relative; top:-316px; left:240px;}

@@ -3,13 +3,194 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
 -->
+<!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Juego del Ahorcado</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link rel="stylesheet" href="css/basedades.css">
+        <script src="js/basedades.js"></script>
+        <script>   
+
+            // Esto es para darle al enter
+           // Get the input field
+var input = document.getElementById("myInput");
+
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(falloEncierto) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click(falloEncierto);
+  }
+});
+            
+        </script>
+        
     </head>
-    <body>
-        <div>TODO write content</div>
+    
+    
+    <body onload="escondeImg(); CargarImagenes(); misterio(); " style="background-image: url('img/Desert.png');
+          background-size: 640px 480px; background-repeat: no-repeat; display: none;">
+        
+ 
+        <h1 id="titulo">Juego del Ahorcado</h1>
+        <form>
+          
+            <input type="text" id="letra" name="Letra" placeholder="Escribe una letra en minuscula" maxlength="1">
+            <button type="button" id="botonComprobar" onclick="falloEncierto()">Comprobar</button>
+            
+        </form> 
+        <h2>Palabra:</h2>  <h3 id="demanessopes"><a href="https://prosselloe.wordpress.com/2015/05/16/vols-sopes-en-record-dels-nostres-padrins/"> Te rindes? </a></h3>
+        <p id="Palabra">&nbsp;&nbsp;&nbsp; -------- </p>
+        <h2 id="vidas1">Vidas:</h2> <h3 id="Gatotienesiete"><a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats"> Un gato tiene siete? </a></h3>
+        <h3 id="Vidas">&nbsp;&nbsp;&nbsp;&nbsp;  7  </h3>
+        <h2 id="LETRASINCORRECTAS">Letras:</h2>  <h3 id="etslletres"><a href="https://pccd.dites.cat/p/De_lletres"> Eres de letras? </a></h3>
+        <p id="Letras">&nbsp;&nbsp;&nbsp; _,_,_,_,_,_,_ </p>
+        <h3 id = "counter" >0</h3>
+        <h2 id="urlpistas"> &nbsp;&nbsp; URLpistas </h2> <h3 id="urlpista1"><a href="https://pccd.dites.cat/p/A_la_quinta_forca"> Pista 1 </a></h3> <h3 id="urlpista2"><a href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes"> Pista 2 </a></h3> <h3 id="urlpista3"><a href="https://pccd.dites.cat/p/Setze_jutges_d%27un_jutjat_mengen_fetge_d%27un_penjat"> Pista 3 </a></h3>
+        <h2 id="urlpistas"> &nbsp;&nbsp; Créditos </h2> <h3 id="Juego del ahorcado en Scratch"> <a href="https://www.youtube.com/watch?v=v53rEMHghJU&list=PLv1JHCp6B60w_KnMTu7jDdlDZ6Z0-WJ-j&ab_channel=PereMiquelRossell%C3%B3Espases"> </a> </h3>
+        <button type="button" id="BotonPista" onclick="randomizadorpista()">Pista</button>
+        <button type="button" id="Tecladoboton" onclick="document.getElementById('Teclado').hidden = !document.getElementById('Teclado').hidden;"><img src="img/keyboard.png" title="Muestra o esconde" alt="Teclado"></button>
+        <button id="sonidos" title="On / Off"
+                onclick="document.getElementById('off').hidden = document.getElementById('on').hidden;
+                    document.getElementById('on').hidden = !document.getElementById('off').hidden;"> <img src="img/on.png" style="width:26px;height:20px" id="on"> <img src="img/off.png" style="width:26px;height:20px" id="off" hidden></button>
+        <div id ="traducciones">
+        <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionbeta?_x_tr_sl=es&_x_tr_tl=ca&_x_tr_hl=ca&_x_tr_pto=wapp" id="ca"> <img src="img/ca.png" alt="tra_ca" title="En Catalan"><a/>
+                                               
+        <a href="https://penjatiesbendinat.netlify.app/versionbeta" id="es"> <img src="img/es.png" alt="tra_es" title="En Castellano"><a/>
+                                               
+        <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionbeta?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=ca&_x_tr_pto=wapp" id="gb"> <img src="img/gb.png" alt="tra_gb" title="En Ingles"><a/>
+                                               
+        <a href="https://penjatiesbendinat-netlify-app.translate.goog/versionbeta?_x_tr_sl=es&_x_tr_tl=fr&_x_tr_hl=ca&_x_tr_pto=wapp" id="fr"> <img src="img/fr.png" alt="tra_fr" title="En Frances"><a/>
+            </div>
+        <div id="Teclado" translate="no">
+            <table><strong>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="q" onclick="document.getElementById('letra').value = 'q';">q</button>
+                    <button id="w" onclick="document.getElementById('letra').value = 'w';">w</button>
+                    <button id="e" onclick="document.getElementById('letra').value = 'e';">e</button>
+                    <button id="r" onclick="document.getElementById('letra').value = 'r';">r</button>
+                    <button id="t" onclick="document.getElementById('letra').value = 't';">t</button>
+                    <button id="y" onclick="document.getElementById('letra').value = 'y';">y</button>
+                    <button id="u" onclick="document.getElementById('letra').value = 'u';">u</button>
+                    <button id="i" onclick="document.getElementById('letra').value = 'i';">i</button>
+                    <button id="o" onclick="document.getElementById('letra').value = 'o';">o</button>
+                    <button id="p" onclick="document.getElementById('letra').value = 'p';">p</button>
+                    <!--
+                    <button id="agut" onclick="alert('Sense vocals accentuades!');" 
+                            style="color:red" title="Accent Agut">´</button>
+                    -->
+                    <button id="retro" onclick="Retroces();;" title="BACKSPACE">←</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    &nbsp;&nbsp;
+                    <button id="a" onclick="document.getElementById('letra').value = 'a';">a</button>
+                    <button id="s" onclick="document.getElementById('letra').value = 's';">s</button>
+                    <button id="d" onclick="document.getElementById('letra').value = 'd';">d</button>
+                    <button id="f" onclick="document.getElementById('letra').value = 'f';">f</button>
+                    <button id="g" onclick="document.getElementById('letra').value = 'g';">g</button>
+                    <button id="h" onclick="document.getElementById('letra').value = 'h';">h</button>
+                    <button id="j" onclick="document.getElementById('letra').value = 'j';">j</button>
+                    <button id="k" onclick="document.getElementById('letra').value = 'k';">k</button>
+                    <button id="l" onclick="document.getElementById('letra').value = 'l';">l</button>
+                    <button id="ñ" onclick="document.getElementById('letra').value = 'ñ';" 
+                            style="color:blue">ñ</button>
+                    <!--
+                    <button id="dieresi" onclick="alert('Sense vocals amb dièrsi!');" 
+                            style="color:red" title="Dièresi">¨</button>
+                    -->
+                    <button id="intro" onclick="falloEncierto();" title="ENTER">┘</button>
+                  </td>          
+                </tr>
+                <tr>
+                  <td>
+                    <button id="shift" onclick="alert('Només lletres minúscules!');" 
+                            style="color:red" title="SHIFT">↑</button>
+                    <button id="z" onclick="document.getElementById('letra').value = 'z';">z</button>
+                    <button id="x" onclick="document.getElementById('letra').value = 'x';">x</button>
+                    <button id="c" onclick="document.getElementById('letra').value = 'c';">c</button>
+                    <button id="v" onclick="document.getElementById('letra').value = 'v';">v</button>
+                    <button id="b" onclick="document.getElementById('letra').value = 'b';">b</button>
+                    <button id="n" onclick="document.getElementById('letra').value = 'n';">n</button>
+                    <button id="m" onclick="document.getElementById('letra').value = 'm';">m</button>
+                    <button id="ç" onclick="document.getElementById('letra').value = 'ç';" 
+                            style="color:blue">ç</button>
+                    <button id="volat" onclick="document.getElementById('letra').value = '·';" 
+                            style="color:blue" title="Punt Volat">·</button>
+                    <button id="guio" onclick="document.getElementById('letra').value = '-';" 
+                            style="color:blue" title="Guionet">-</button>
+                    <!--
+                    <button id="greu" onclick="alert('Sense vocals accentuades!');" 
+                            style="color:red" title="Accent Greu">`</button>
+                    -->
+                  </td>          
+                </tr>
+            </strong></table>
+        </div>
+            
+        <div id="gato">
+            <img src="img/disfraz3.png" id="disfraz3" style="width:86px;height:90px;"
+            title="Miau!">
+            <img src="img/rotar.gif" id="rotar" style="width:86px;height:90px;"
+            title="Miauuuu!">
+            <img src="img/disfraz2.png" id="disfraz2" style="width:86px;height:90px;"
+            title="Miau!">
+            <img src="img/disfraz1.png" id="disfraz1" style="width:86px;height:90px;"
+            title="Miau!">
+            <img src="img/caminar.gif" id="caminar" style="width:86px;height:90px;"
+            title="Miauuuu!">
+    
+        </div>
+         
+        <div id='imagenes'>
+            
+            <img src="img/ahorcado_6.png" id="ahorcado_6" style ="width:280px;height:270px;"
+                 title="Te quedan 6 vidas!">
+            <img src="img/ahorcado_5.png" id="ahorcado_5" style ="width:280px;height:270px;"
+                 title="Te quedan 5 vidas!">
+            <img src="img/ahorcado_4.png" id="ahorcado_4" style ="width:280px;height:270px;"
+                 title="Te quedan 4 vidas!">
+            <img src="img/ahorcado_3.png" id="ahorcado_3" style ="width:280px;height:270px;"
+                 title="Te quedan 3 vidas!">
+            <img src="img/ahorcado_2.png" id="ahorcado_2" style ="width:280px;height:270px;"
+                 title="Te quedan 2 vidas!">
+            <img src="img/ahorcado_1.png" id="ahorcado_1" style ="width:280px;height:270px;"
+                 title="Te queda 1 vida!">
+            <img src="img/ahorcado_0.png" id="ahorcado_0" style ="width:280px;height:270px;"
+                 title="Te quedaste sin vidas!">
+             
+        </div>
+            <div id="ahorcadofinal">
+            
+                
+                <img src="img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"> 
+                                                                                                          
+            </div>
+    
+       
+        <div id='audios'>  
+        
+            <audio id="mystery">    <source src="aud/mystery.mp3"       type="audio/mpeg"></audio>
+            <audio id="miau">        <source src="aud/miau.mp3"          type="audio/mpeg"></audio>
+            <audio id="clock">       <source src="aud/clock_ticking.mp3" type="audio/mpeg"></audio>
+            <audio id="cheer">       <source src="aud/cheer.mp3"         type="audio/mpeg"></audio>
+            <audio id="catfight">    <source src="aud/cat-fight.mp3"     type="audio/mpeg"></audio>
+            <audio id="boom">        <source src="aud/boom_cloud.mp3"    type="audio/mpeg"></audio>
+            <audio id="belltoll">    <source src="aud/bell_toll.mp3"     type="audio/mpeg"></audio>
+            <audio id="belltollx3"> <source src="aud/bell_toll_x3.mp3"  type="audio/mpeg"></audio>
+        
+        </div>
+         
+
     </body>
+        
+        
 </html>
