@@ -209,7 +209,7 @@
                 default:
                     break;
             }
-            alert(palabra);
+            
             if ((Letra < "a") || (Letra > "z")) {  
                 window.alert("Vuelve a intentarlo");
                 document.getElementById("disfraz1").hidden = true;

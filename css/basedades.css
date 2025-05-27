@@ -42,11 +42,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 #gato {position:relative; top:-320px; left:0px;}
 
-#traducciones {position:relative; top:-150px; left:-30px;}
+#traducciones {position:relative; top:-420px; left:-30px;}
 
-#Teclado {position:relative; top:-650px; left:300px;}
+#Teclado {position:relative; top:-850px; left:300px;}
 
-#Tecladoboton {position:relative; top:-600px; left:500px;}
+#Tecladoboton {position:relative; top:-800px; left:500px;}
 
 #ca {position:relative; top:-512px; left:480px;}
 
@@ -77,11 +77,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 #counter {position:relative; top:-256px; left:120px;}
 
-#BotonPista {position:relative; top:-550px; left:170px;}
+#BotonPista {position:relative; top:-750px; left:170px;}
 
 #Palabra {position:relative; top:-30px; left:10px;}
 
-#sonidos {position:relative; top:-600px; left:380px;}
+#sonidos {position:relative; top:-800px; left:380px;}
 
 #urlpistas {position:relative; top:-190px; left:-18px;}
 
@@ -90,3 +90,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 #urlpista2 {position:relative; top:-276px; left:180px;}
 
 #urlpista3 {position:relative; top:-316px; left:240px;}
+
+#credito1 {position:relative; top:-316px; left:-20px;}
+
+#credito2 {position:relative; top:-361px; left:100px;}
+
+#wiki {position:relative; top:-406px; left:340px;}
+
+#wiki1 {position:relative; top:-451px; left:420px;}
+
+#wiki2 {position:relative; top:-490px; left:480px;}
+
+#wiki3 {position:relative; top:-530px; left:570px;}
+
+#Youtube1 {position:relative; top:-620px; left:300px;}
+#Youtube2 {position:relative; top:-665px; left:415px;}
